@@ -1,3 +1,41 @@
-[data-theme="light"]{
+html {
+  --Dark-Blue: hsl(209, 23%, 22%); /* Dark Mode Elements */
+  --Very-Dark-Blue: hsl(207, 26%, 17%); /* Dark Mode Background */
+  --Extra-Dark-Blue: hsl(200, 15%, 8%); /* Light Mode Text */
+  --Dark-Gray: hsl(0, 0%, 52%); /* Light Mode Input */
+  --Very-Light-Gray: hsl(0, 0%, 98%); /* Light Mode Background */
+  --White: hsl(0, 0%, 100%); /* Dark Mode Text & Light Mode Elements */
 
+  --light: 300;
+  --medium: 600;
+  --bold: 800;
+
+  font-family: Nunito Sans;
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+
+  height: 100vh;
+}
+
+body {
+  --bg-color: var(--Very-Dark-Blue);
+  --text-color: var(--White);
+  --input-color: var(--White);
+  --element-color: var(--Dark-Blue);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-color: var(--bg-color);
+}
+
+[data-theme="light"]{
+  --bg-color: var(--Very-Light-Gray);
+  --text-color: var(--Extra-Dark-Blue);
+  --input-color: var(--Dark-Gray);
+  --element-color: var(--White);
+}
+
+html {
+  
 }

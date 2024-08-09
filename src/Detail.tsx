@@ -1,12 +1,39 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import BorderCountry from "./BorderCountry";
 
 interface Props {
   setDetail: Function;
   country: any;
 }
-
+/*
+ *
+ * TODO: Fix borderContries only containing one country
+ *
+ */
 export default function Detail(props: Props) {
-  console.log(props.country);
+  const [borderCountries, setBorderCountries] = useState<any[]>([]);
+
+  useEffect(() => {
+    if (props.country.borders) {
+      let list = [];
+      props.country.borders.map((borderCountry: string) => {
+        const fetchBorderCountries = async () => {
+          const response = await fetch(
+            `https://restcountries.com/v3.1/alpha/${borderCountry}`
+          );
+          let data;
+          if (response.ok) {
+            data = await response.json();
+          }
+          list = [...list, data[0]];
+          console.log(borderCountries);
+        };
+
+        fetchBorderCountries().then(() => setBorderCountries(list));
+      });
+    }
+  }, []);
+
   return (
     <div className="main-detail">
       <button className="back-button" onClick={() => props.setDetail(false)}>
@@ -38,16 +65,26 @@ export default function Detail(props: Props) {
           <strong>Capital: </strong> {props.country.capital}
         </p>
         <p>
-          <strong>Top Level Domain: </strong> {props.country.tld}
+          <strong>Top Level Domain: </strong> {props.country.tld.join(", ")}
         </p>
         <p>
-          <strong>Currencies: </strong> {Object.keys(props.country.currencies)}
+          <strong>Currencies: </strong>{" "}
+          {Object.keys(props.country.currencies).join(", ")}
         </p>
         <p>
           <strong>Languages: </strong>{" "}
           {Object.values(props.country.languages).join(", ")}
         </p>
-        <h3>Border Countries:</h3>
+        {borderCountries != undefined ? <h3>Border Countries:</h3> : null}
+        {borderCountries != undefined
+          ? borderCountries.map((country) => {
+              if (country) {
+                return (
+                  <BorderCountry key={country.name.common} country={country} />
+                );
+              }
+            })
+          : null}
       </div>
     </div>
   );

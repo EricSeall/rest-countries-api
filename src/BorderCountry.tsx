@@ -1,5 +1,14 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
-export default function BorderCountry() {
-  return <div>BorderCountry</div>;
+interface Props {
+  country: any;
+}
+
+export default function BorderCountry(props: Props) {
+  console.log(props.country);
+  return (
+    <button className="border-country-button">
+      {props.country ? props.country.name.common : null}
+    </button>
+  );
 }

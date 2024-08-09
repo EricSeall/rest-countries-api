@@ -27,6 +27,8 @@ body {
   padding: 0;
   min-height: 100vh;
   background-color: var(--bg-color);
+
+  transition-duration: .2s;
 }
 
 [data-theme="light"]{

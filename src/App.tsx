@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import CountryList from "./CountryList";
 import Header from "./Header";
@@ -6,11 +6,23 @@ import Home from "./Home";
 import Detail from "./Detail";
 
 function App() {
-  const list = getCountries();
   const [colorMode, setColorMode] = useState("dark");
-  const [countryList, setCountryList] = useState<any[]>(list ? list : []);
+  const [countryList, setCountryList] = useState<any[]>([]);
   const [detail, setDetail] = useState(false);
   const [activeCountry, setActiveCountry] = useState<any>();
+
+  useEffect(() => {
+    const fetchCountries = async () => {
+      const response = await fetch("https://restcountries.com/v3.1/all");
+      let data;
+      if (response.ok) {
+        data = await response.json();
+      }
+      setCountryList(data);
+    };
+
+    fetchCountries();
+  }, []);
 
   document.querySelector("body")?.setAttribute("data-theme", colorMode);
 
@@ -24,7 +36,7 @@ function App() {
     setDetail(detailValue);
   }
 
-  function getCountries(country?: string) {
+  function getCountries(country: string) {
     let list;
     if (country) {
       fetch(`https://restcountries.com/v3.1/name/${country}`)
@@ -47,7 +59,6 @@ function App() {
         })
         .then((data) => {
           list = data;
-          //console.log(list);
         })
         .catch((error) => console.log(error));
     }

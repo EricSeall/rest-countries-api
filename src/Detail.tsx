@@ -59,7 +59,7 @@ export default function Detail(props: Props) {
           src={props.country.flags.svg}
           alt={props.country.flags.alt}
         />
-        <div>
+        <div className="info-detail">
           <h2 className="name-detail">{props.country.name.official}</h2>
           <p>
             <strong>Native Name: </strong>{" "}

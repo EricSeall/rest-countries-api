@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import "./App.css";
-import CountryList from "./CountryList";
 import Header from "./Header";
 import Home from "./Home";
 import Detail from "./Detail";

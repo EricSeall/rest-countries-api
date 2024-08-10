@@ -1,4 +1,5 @@
-import React from "react";
+import Sun from "./assets/icons/sun-solid.svg";
+import Moon from "./assets/icons/moon-solid.svg";
 
 interface Props {
   colorMode: string;
@@ -20,11 +21,7 @@ export default function Header(props: Props) {
       >
         <img
           className="color-icon"
-          src={
-            props.colorMode === "dark"
-              ? "./src/assets/icons/moon-solid.svg"
-              : "./src/assets/icons/sun-solid.svg"
-          }
+          src={props.colorMode === "dark" ? Moon : Sun}
           alt={
             props.colorMode === "dark" ? "dark mode icon" : "light mode icon"
           }

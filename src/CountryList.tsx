@@ -1,4 +1,3 @@
-import React from "react";
 import "./CountryList.css";
 import CountryCard from "./CountryCard";
 

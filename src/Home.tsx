@@ -1,4 +1,3 @@
-import React from "react";
 import CountryList from "./CountryList";
 
 interface Props {

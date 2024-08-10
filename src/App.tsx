@@ -10,6 +10,8 @@ function App() {
   const [countryList, setCountryList] = useState<any[]>([]);
   const [detail, setDetail] = useState(false);
   const [activeCountry, setActiveCountry] = useState<any>();
+  const [activeRegion, setActiveRegion] = useState("All");
+  const [filteredCountryList, setFilteredCountryList] = useState<any[]>([]);
 
   useEffect(() => {
     const fetchCountries = async () => {
@@ -19,12 +21,11 @@ function App() {
         data = await response.json();
       }
       setCountryList(data);
+      setFilteredCountryList(data);
     };
 
     fetchCountries();
   }, []);
-
-  document.querySelector("body")?.setAttribute("data-theme", colorMode);
 
   function handleSearch(target: HTMLInputElement) {
     getCountries(target.value);
@@ -64,16 +65,42 @@ function App() {
     }
     return list;
   }
+
+  function filterCountryByRegion(region: string) {
+    if (region === "All") {
+      setFilteredCountryList(countryList);
+    } else {
+      setFilteredCountryList(
+        countryList.filter((country) => {
+          console.log(country.region === region);
+
+          return country.region === region;
+        })
+      );
+    }
+    setActiveRegion(region);
+  }
+
+  document.querySelector("body")?.setAttribute("data-theme", colorMode);
+
   return (
     <>
       <Header colorMode={colorMode} setColorMode={setColorMode} />
       {detail ? (
-        <Detail setDetail={setDetail} country={activeCountry} />
+        <Detail
+          setDetail={setDetail}
+          country={activeCountry}
+          setActiveCountry={setActiveCountry}
+        />
       ) : (
         <Home
           handleDetail={handleDetail}
           handleSearch={handleSearch}
-          countryList={countryList}
+          activeRegion={activeRegion}
+          filterCountryByRegion={filterCountryByRegion}
+          countryList={
+            activeRegion === "All" ? countryList : filteredCountryList
+          }
         />
       )}
     </>

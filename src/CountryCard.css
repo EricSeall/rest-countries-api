@@ -1,21 +1,36 @@
 .country-card{
+    
     overflow: hidden;
     border-radius: .5rem;
 
     background-color: var(--element-color);
     margin-bottom: 2rem;
-}
+    box-shadow: 0 0 .2rem .05rem rgba(0, 0, 0, 0.281);
 
-.country-flag{
-    width: 100%;
+    flex-grow: 1;
+
+    max-width: 24rem;
     cursor: pointer;
 }
+.country-card:hover{
+    scale: 1.05;
+}
+
+.country-flag-main{
+    width: 100%;
+    
+}
+
+
 
 .country-info {
     padding: 1.5rem;
 }
 
 h2 {
-
+    margin-top: 0;
 }
 
+.country-info p {
+    margin: .5rem 0;
+}

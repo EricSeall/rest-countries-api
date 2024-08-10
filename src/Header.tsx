@@ -16,6 +16,7 @@ export default function Header(props: Props) {
             ? props.setColorMode("light")
             : props.setColorMode("dark")
         }
+        tabIndex={0}
       >
         <img
           className="color-icon"

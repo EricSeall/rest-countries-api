@@ -10,6 +10,7 @@
 
   padding: 1rem;
   background-color: var(--element-color);
+  /*box-shadow: 0 0 .2rem .05rem rgba(0, 0, 0, 0.281); */
 }
 
 h1 {
@@ -17,10 +18,16 @@ h1 {
   font-weight: var(--bold);
 }
 
+.name-detail{
+  margin-top: 1.5rem;
+}
+
 .color-mode-container {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+
+  cursor: pointer;
 }
 
 .color-icon {
@@ -36,8 +43,9 @@ h1 {
 }
 
 .main-home {
+  position: relative;
   padding: 1rem;
-
+  padding-top: 1.5rem;
   background-color: var(--bg-color);
 }
 
@@ -50,6 +58,8 @@ h1 {
 
   border-radius: 0.5rem;
   margin-bottom: 2rem;
+
+  box-shadow: 0 0 .2rem .05rem rgba(0, 0, 0, 0.281);
 }
 
 .search-icon {
@@ -79,7 +89,28 @@ h1 {
   padding: 1rem;
   background-color: var(--element-color);
   border-radius: 0.5rem;
-  margin-bottom: 2rem;
+
+  box-shadow: 0 0 .2rem .05rem rgba(0, 0, 0, 0.281);
+  
+}
+
+.filter-dropdown {
+  border: none;
+  outline: none;
+
+  display: flex;
+  align-items: center;
+  background-color: var(--element-color);
+  color: var(--text-color);
+  padding: 0;
+}
+
+.dropdown-caret {
+  width: 1rem;
+  margin-right: 2rem;
+  margin-left: 1rem;
+
+  fill: var(--text-color);
 }
 
 .dropdown-items {
@@ -89,14 +120,47 @@ h1 {
   background-color: var(--element-color);
   border-radius: 0.5rem;
   z-index: 1;
+  padding: 1rem;
+  left: 0;
 }
 
-.dropdown:hover .dropdown-items {
+.dropdown-items ul {
+  padding: 0;
+}
+
+.dropdown:hover .dropdown-items,  .dropdown:focus .dropdown-items, .dropdown:active .dropdown-items{
   display: block;
 }
 
+.filter-item{
+  list-style-type: none;
+  cursor: pointer;
+  width: 100%;  
+}
+
+
+.active-region {
+  text-decoration: underline;
+}
+
 .main-detail {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4rem;
+  align-items: center;
   padding: 2rem;
+}
+
+.country-flag-detail{
+  max-width: 48rem;
+}
+
+button {
+  -webkit-appearance: none;
+  appearance: none;
+  -moz-appearance: none;
 }
 
 .back-button {
@@ -104,5 +168,49 @@ h1 {
   justify-content: space-around;
   align-items: center;
 
-  padding: 1rem;
+  padding: .25rem, 1rem;
+  border: none;
+  border-radius: .1rem;
+  background-color: var(--element-color);
+  color: var(--text-color); 
+  font-family: Nunito Sans;
+
+  box-shadow: 0 0 .2rem .05rem rgba(0, 0, 0, 0.281);
+  margin: 2rem 2rem 1rem 2rem;
+  cursor: pointer;
+}
+
+.back-button span {
+  margin-right: 1rem;
+}
+
+.back-arrow {
+  width: 1.2rem;
+  margin-right: .5rem;
+  margin-left: 1rem;
+  margin-top: .5rem;
+  margin-bottom: .5rem;
+
+  padding: .25rem 0;
+}
+
+
+.border-button-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.border-country-button {
+  padding: .25rem, 1rem;
+  border: none;
+  border-radius: .1rem;
+  background-color: var(--element-color);
+  color: var(--text-color); 
+  font-family: Nunito Sans;
+
+  box-shadow: 0 0 .2rem .05rem rgba(0, 0, 0, 0.281);
+  cursor: pointer;
 }

@@ -8,11 +8,14 @@ interface Props {
 
 export default function (props: Props) {
   return (
-    <div className="country-card">
+    <div
+      className="country-card"
+      onClick={() => props.handleDetail(true, props.country)}
+    >
       <img
-        className="country-flag"
+        className="country-flag-main"
         src={props.country.flags.svg}
-        onClick={() => props.handleDetail(true, props.country)}
+        alt={props.country.flags.alt}
       />
       <div className="country-info">
         <h2>{props.country.name.common}</h2>

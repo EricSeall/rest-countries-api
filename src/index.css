@@ -16,6 +16,7 @@ html {
   padding: 0;
 
   height: 100vh;
+  
 }
 
 body {
@@ -28,7 +29,8 @@ body {
   min-height: 100vh;
   background-color: var(--bg-color);
 
-  transition-duration: .2s;
+  transition-property: all;
+  transition-duration: .1s;
 }
 
 [data-theme="light"]{
@@ -36,8 +38,5 @@ body {
   --text-color: var(--Extra-Dark-Blue);
   --input-color: var(--Dark-Gray);
   --element-color: var(--White);
-}
 
-html {
-  
 }

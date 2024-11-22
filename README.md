@@ -4,7 +4,7 @@ The site is live [here](https://ericseall.github.io/rest-countries-api/) for any
 
 ## Features
 
-<img width=50% src="https://github.com/user-attachments/assets/597b03d0-6bc7-4888-b75b-700534f51907" /> <img width=50% src="https://github.com/user-attachments/assets/be9a178b-9b88-4878-a266-32ddf3d2b12f" />
+<img width=40% src="https://github.com/user-attachments/assets/597b03d0-6bc7-4888-b75b-700534f51907" /> <img width=40% src="https://github.com/user-attachments/assets/be9a178b-9b88-4878-a266-32ddf3d2b12f" />
 
 
 This was a challenge given by [Frontend Mentor](https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca) to use the [REST Countries API](https://restcountries.com/) to create a frontend interface. There was a style guide given with color and font info and a mockup to replicate.

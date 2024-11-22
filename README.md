@@ -1,30 +1,46 @@
-# React + TypeScript + Vite
+The site is live [here](https://ericseall.github.io/rest-countries-api/) for anyone to view!
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<img width=50% src="https://github.com/user-attachments/assets/597b03d0-6bc7-4888-b75b-700534f51907" /> <img width=50% src="https://github.com/user-attachments/assets/be9a178b-9b88-4878-a266-32ddf3d2b12f" />
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This was a challenge given by [Frontend Mentor](https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca) to use the [REST Countries API](https://restcountries.com/) to create a frontend interface. There was a style guide given with color and font info and a mockup to replicate.
 
-## Expanding the ESLint configuration
+The specifications were as follows:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+```
+Your users should be able to:
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json', './tsconfig.app.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+- See all countries from the API on the homepage
+- Search for a country using an input field
+- Filter countries by region
+- Click on a country to see more detailed information on a separate page
+- Click through to the border countries on the detail page
+- View the optimal layout for the interface depending on their device's screen size
+- See hover and focus states for all interactive elements on the page
+- Bonus: Toggle the color scheme between light and dark mode
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+All specifications have been met in this project. The only pre-written content of any sort was the given index.html file, which I further edited to include the custom font.
+
+## Tech Stack
+
+- React.js
+- Vite
+- Typescript
+- HTML
+- CSS
+
+## Development
+
+### Dependencies
+
+- Node.js
+- NPM
+
+### Running The Program
+
+Install dependencies:
+> `npm install`
+
+Run Application:
+> `npm run dev`

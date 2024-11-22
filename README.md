@@ -1,4 +1,8 @@
+# REST Countries API with color theme switcher
+
 The site is live [here](https://ericseall.github.io/rest-countries-api/) for anyone to view!
+
+## Features
 
 <img width=50% src="https://github.com/user-attachments/assets/597b03d0-6bc7-4888-b75b-700534f51907" /> <img width=50% src="https://github.com/user-attachments/assets/be9a178b-9b88-4878-a266-32ddf3d2b12f" />
 
